@@ -1,21 +1,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct brunch {char[] name; int ranking;};
+struct brunch {char[] name; int price;};
+char[][] menu = {"waffles", "pancakes", "avocado toast", "croissant", "omelets"};
+int[] prices = {3, 5, 13, 12, 1, 9};
 
-brunch waffles(){
+brunch randomMenuItem(){
 struct brunch item;
-item1.name = "waffles";
-item1.ranking = 1;
+int decideFood = (rand() * 6) / 100;
+item1.name = menu[decideFood];
+
+int decidePrice = (rand() * 6) / 100;
+item1.price = prices[decidePrice];
 
 return item;
 }
 
+void printBrunchItem(brunch item){
+printf("Brunch time! Your brunch food will be... %c and costs $%d", item.name, item.price);
+}
+
 int main(){
 struct brunch item1;
+item1 = randomMenuItem();
 
-
-
-
-
+printBrunchItem(item1);
 }
