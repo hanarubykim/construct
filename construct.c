@@ -1,25 +1,36 @@
-// Create a struct that has at least 2 data members, one must be a string.
-//  You can provide struct prototypes outside of functions.
-// Don't just combine random things, make it meaningful (like food and price, athlete and associated statistic, Pokemon and something about Pokemon ..)
-// Write a function that returns an example of your struct when run.
-//     This should not return the same values every time.
-// Write a function that prints out variables of your structs type in a reasonable way.
-// Write a function that modifies values of your struct's type.
-// Write a main function that tests all these things.
-//     Have meaningful output.
-// DONT FORGET A MAKEFILE
-
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-struct brunch {char[] str; int ranking;};
+struct brunch brunchItem;
 
-int main(){
-  struct brunch waffles;
-  waffles.str
+struct brunch{
+  char *name;
+  int price;
+};
 
+char *menu[] = {"waffles", "pancakes", "avocado toast", "croissant", "omelets"};
+int prices[] = {3, 5, 13, 12, 1, 9};
 
+struct brunch randomMenuItem(){
+  brunch item;
+  int decideFood = (rand() * 6) / 100;
+  item.name = *menu[decideFood];
 
+  int decidePrice = (rand() * 6) / 100;
+  item.price = prices[decidePrice];
 
+  return item;
+}
 
+void printBrunchItem(brunch item){
+  printf("Brunch time! Your brunch food will be... %c and costs $%d", item.name, item.price);
+}
+
+brunch changeTo(char food, int price){
+  brunch item;
+  item.name = food;
+  item.price = price;
+
+  return item;
 }
