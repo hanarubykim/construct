@@ -20,9 +20,16 @@ void printBrunchItem(brunch item){
 printf("Brunch time! Your brunch food will be... %c and costs $%d", item.name, item.price);
 }
 
+brunch changeTo(int chooseItem, int choosePrice){
+
+
+}
+
 int main(){
 struct brunch item1;
 item1 = randomMenuItem();
 
 printBrunchItem(item1);
 }
+
+
