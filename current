@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+struct brunch {char[] name; int ranking;};
+
+brunch waffles(){
+struct brunch item;
+item1.name = "waffles";
+item1.ranking = 1;
+
+return item;
+}
+
+int main(){
+struct brunch item1;
+
+
+
+
+
+}
