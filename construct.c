@@ -17,7 +17,7 @@ struct brunch randomMenuItem(){
   srand(time(NULL));
   struct brunch item;
   int decideFood = rand() % 6;
-  item.name = menu[decideFood - 1];
+  item.name = menu[decideFood];
 
   int decidePrice = rand() % 6;
   item.price = prices[decidePrice];
