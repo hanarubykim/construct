@@ -17,7 +17,7 @@ struct brunch randomMenuItem(){
   srand(time(NULL));
   struct brunch item;
   int decideFood = rand() % 6;
-  item.name = menu[decideFood];
+  strcpy(item.name, menu[decideFood]);
 
   int decidePrice = rand() % 6;
   item.price = prices[decidePrice];
@@ -26,22 +26,13 @@ struct brunch randomMenuItem(){
 }
 
 void printBrunchItem(struct brunch item){
-  printf("Brunch time! Your brunch food will be... %c and costs $%d\n\n", item.name, item.price);
+  printf("Brunch time! Your brunch food will be... %s and costs $%d\n\n", item.name, item.price);
 }
 
-struct brunch changeTo(char *food, int price){
+struct brunch changeTo(char* food, int price){
   struct brunch item;
-  item.name = *food;
+  strcpy(item.name, food);
   item.price = price;
 
-  return item;
-}
-
-int main(){
-  struct brunch item1;
-  item1 = randomMenuItem();
-  printBrunchItem(item1);
-
-  item1 = changeTo("bagel", 2);
-  printBrunchItem(item1);
+return item;
 }
